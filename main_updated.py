@@ -302,9 +302,8 @@ elif st.session_state.logged_in:
                 
                 
                 st.dataframe(
-                    df.style.applymap(color_status, subset=['Status']),
-                    use_container_width=True,
-                    hide_index=True
+                    df.style.map(color_status, subset=['Status']),  # Updated from applymap to map
+                    use_container_width=True  # Removed unsupported hide_index argument
                 )
                 
                 
